@@ -7,10 +7,35 @@
 **
 ** La fonction renvoie null en cas d'erreur
 */
-function calculatrice(signe, gauche, droite) {
-    var result = null;
 
-    return result;
+var signe = '+';
+    var gauche = 80;
+    var droite = 2;
+
+function calculatrice(signe, gauche, droite) {
+    
+    if(signe == '+'){
+        result = gauche + droite;
+    }
+    
+    else if(signe == '*'){
+        result = gauche * droite;
+    }
+    
+    else if(signe == '-'){
+        result = gauche - droite;
+    }
+        
+    else if(signe == '/'){
+        result = gauche / droite;
+    }
+    
+    else{
+        
+        var result = null;
+    }
+
+        return result;
 }
  
 module.exports = calculatrice;
