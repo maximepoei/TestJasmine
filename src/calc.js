@@ -8,34 +8,26 @@
 ** La fonction renvoie null en cas d'erreur
 */
 
-var signe = '+';
-    var gauche = 80;
-    var droite = 2;
 
 function calculatrice(signe, gauche, droite) {
-    
-    if(signe == '+'){
-        result = gauche + droite;
+    if (typeof gauche === 'number' && typeof droite === 'number') {
+           if (gauche>=0 && droite<430 && droite!=0) {
+            switch (signe) {
+                case "*":
+                    return gauche*droite;
+                case "+":
+                    return gauche+droite;
+                case "-":
+                    return gauche-droite;
+                case "/":
+                    return gauche/droite;
+                default:
+                    return null;
+            } 
+        } else {
+               return null;
+        }
+    } else{
+        return null;
     }
-    
-    else if(signe == '*'){
-        result = gauche * droite;
-    }
-    
-    else if(signe == '-'){
-        result = gauche - droite;
-    }
-        
-    else if(signe == '/'){
-        result = gauche / droite;
-    }
-    
-    else{
-        
-        var result = null;
-    }
-
-        return result;
 }
- 
-module.exports = calculatrice;
